@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func evento1Action(_ sender: Any) {
+    }
 
+    @IBAction func evento2Action(_ sender: Any) {
+    }
 }
 
