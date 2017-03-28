@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="968.79999999999995" y="-560.86956521739137"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="v5o-PB-rnV">
             <objects>
-                <viewController id="Jwv-tK-ytj" sceneMemberID="viewController">
+                <viewController id="Jwv-tK-ytj" customClass="LoginViewController" customModule="FirebaseWithLove" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rXy-qG-yi4"/>
                         <viewControllerLayoutGuide type="bottom" id="YWj-lr-d2V"/>
@@ -75,7 +75,24 @@
                     <view key="view" contentMode="scaleToFill" id="4re-y7-uLo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTU-QL-k5W">
+                                <rect key="frame" x="16" y="637" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Obc-dN-tvn"/>
+                                </constraints>
+                                <state key="normal" title="Loggin"/>
+                                <connections>
+                                    <action selector="doLogin:" destination="Jwv-tK-ytj" eventType="touchUpInside" id="ssp-X7-Jcf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VTU-QL-k5W" firstAttribute="leading" secondItem="4re-y7-uLo" secondAttribute="leadingMargin" id="8ga-Bh-Jpv"/>
+                            <constraint firstItem="YWj-lr-d2V" firstAttribute="top" secondItem="VTU-QL-k5W" secondAttribute="bottom" id="Auj-JL-skE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VTU-QL-k5W" secondAttribute="trailing" id="srb-1m-Uq3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GpM-kM-2YA"/>
                     <connections>
