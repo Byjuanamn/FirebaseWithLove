@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        FIRAnalytics.setScreenName("MainViewController", screenClass: "Main")
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,9 +24,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func evento1Action(_ sender: Any) {
+        FIRAnalytics.logEvent(withName: "Action1",
+                              parameters: ["producto" : "Manzanas" as NSObject, "cantidad" : "20" as NSObject])
     }
 
     @IBAction func evento2Action(_ sender: Any) {
+        FIRAnalytics.logEvent(withName: "Action2", parameters: ["Cesta": 25 as NSObject])
+        
     }
 }
 
