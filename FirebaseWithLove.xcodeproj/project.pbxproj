@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B08E6A6B8C9BFE178278811 /* Pods_FirebaseWithLove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4614524EC179110D544F1C34 /* Pods_FirebaseWithLove.framework */; };
 		5D5751111E8B0A3C007C24D8 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5751101E8B0A3C007C24D8 /* SecondViewController.swift */; };
+		5D5751131E8B1494007C24D8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5751121E8B1494007C24D8 /* LoginViewController.swift */; };
 		5DD5CC361E8AFE4C00666001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD5CC351E8AFE4C00666001 /* AppDelegate.swift */; };
 		5DD5CC381E8AFE4C00666001 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD5CC371E8AFE4C00666001 /* ViewController.swift */; };
 		5DD5CC3B1E8AFE4C00666001 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DD5CC391E8AFE4C00666001 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		14B8C21F43B81CD335A99D0A /* Pods-FirebaseWithLove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseWithLove.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseWithLove/Pods-FirebaseWithLove.release.xcconfig"; sourceTree = "<group>"; };
 		4614524EC179110D544F1C34 /* Pods_FirebaseWithLove.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseWithLove.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5751101E8B0A3C007C24D8 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5D5751121E8B1494007C24D8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5DD5CC321E8AFE4C00666001 /* FirebaseWithLove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseWithLove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD5CC351E8AFE4C00666001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DD5CC371E8AFE4C00666001 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +46,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D5751141E8B14A0007C24D8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5DD5CC371E8AFE4C00666001 /* ViewController.swift */,
+				5D5751101E8B0A3C007C24D8 /* SecondViewController.swift */,
+				5D5751121E8B1494007C24D8 /* LoginViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5D5751151E8B14B4007C24D8 /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				5DD5CC351E8AFE4C00666001 /* AppDelegate.swift */,
+			);
+			name = Appdelegate;
+			sourceTree = "<group>";
+		};
+		5D5751161E8B14BF007C24D8 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				5DD5CC391E8AFE4C00666001 /* Main.storyboard */,
+				5DD5CC3E1E8AFE4C00666001 /* LaunchScreen.storyboard */,
+			);
+			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+		5D5751171E8B14EF007C24D8 /* config data */ = {
+			isa = PBXGroup;
+			children = (
+				5DD5CC471E8AFF5D00666001 /* GoogleService-Info.plist */,
+				5DD5CC411E8AFE4C00666001 /* Info.plist */,
+			);
+			name = "config data";
+			sourceTree = "<group>";
+		};
+		5D5751181E8B14FA007C24D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5DD5CC3C1E8AFE4C00666001 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		5DD5CC291E8AFE4C00666001 = {
 			isa = PBXGroup;
 			children = (
@@ -65,14 +111,11 @@
 		5DD5CC341E8AFE4C00666001 /* FirebaseWithLove */ = {
 			isa = PBXGroup;
 			children = (
-				5DD5CC471E8AFF5D00666001 /* GoogleService-Info.plist */,
-				5DD5CC351E8AFE4C00666001 /* AppDelegate.swift */,
-				5DD5CC371E8AFE4C00666001 /* ViewController.swift */,
-				5DD5CC391E8AFE4C00666001 /* Main.storyboard */,
-				5DD5CC3C1E8AFE4C00666001 /* Assets.xcassets */,
-				5DD5CC3E1E8AFE4C00666001 /* LaunchScreen.storyboard */,
-				5DD5CC411E8AFE4C00666001 /* Info.plist */,
-				5D5751101E8B0A3C007C24D8 /* SecondViewController.swift */,
+				5D5751171E8B14EF007C24D8 /* config data */,
+				5D5751151E8B14B4007C24D8 /* Appdelegate */,
+				5D5751141E8B14A0007C24D8 /* ViewControllers */,
+				5D5751161E8B14BF007C24D8 /* StoryBoard */,
+				5D5751181E8B14FA007C24D8 /* Resources */,
 			);
 			path = FirebaseWithLove;
 			sourceTree = "<group>";
@@ -219,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5751131E8B1494007C24D8 /* LoginViewController.swift in Sources */,
 				5D5751111E8B0A3C007C24D8 /* SecondViewController.swift in Sources */,
 				5DD5CC381E8AFE4C00666001 /* ViewController.swift in Sources */,
 				5DD5CC361E8AFE4C00666001 /* AppDelegate.swift in Sources */,
