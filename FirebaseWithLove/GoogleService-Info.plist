@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>1060725444521-8hsj4gu72pegf86ci29k5s3sjsrgn90d.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1060725444521-8hsj4gu72pegf86ci29k5s3sjsrgn90d</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCLeuPsfyQ82WyVXFKeyf22bH82CJ3tY6k</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1060725444521</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.com.FirebaseWithLove</string>
+	<key>PROJECT_ID</key>
+	<string>fir-withlove</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-withlove.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1060725444521:ios:3d292061adca1c81</string>
+	<key>DATABASE_URL</key>
+	<string>https://fir-withlove.firebaseio.com</string>
+</dict>
+</plist>
