@@ -100,13 +100,22 @@
                                     <action selector="doAnonimo:" destination="Jwv-tK-ytj" eventType="touchUpInside" id="ajy-5V-BOZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygJ-9x-Oxr">
+                                <rect key="frame" x="127" y="580" width="120" height="30"/>
+                                <state key="normal" title="Login con Google"/>
+                                <connections>
+                                    <action selector="doLoginWithGoogle:" destination="Jwv-tK-ytj" eventType="touchUpInside" id="ksX-bV-UQs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VTU-QL-k5W" firstAttribute="leading" secondItem="4re-y7-uLo" secondAttribute="leadingMargin" id="8ga-Bh-Jpv"/>
+                            <constraint firstItem="ygJ-9x-Oxr" firstAttribute="centerX" secondItem="eC7-FO-Rsg" secondAttribute="centerX" id="8tT-XG-LBZ"/>
                             <constraint firstItem="YWj-lr-d2V" firstAttribute="top" secondItem="VTU-QL-k5W" secondAttribute="bottom" id="Auj-JL-skE"/>
                             <constraint firstItem="eC7-FO-Rsg" firstAttribute="leading" secondItem="VTU-QL-k5W" secondAttribute="trailing" constant="94" id="WRw-3g-8ui"/>
                             <constraint firstItem="ssT-xL-azL" firstAttribute="leading" secondItem="VTU-QL-k5W" secondAttribute="trailing" priority="999" constant="248" id="aNh-f8-Ive"/>
+                            <constraint firstItem="eC7-FO-Rsg" firstAttribute="top" secondItem="ygJ-9x-Oxr" secondAttribute="bottom" constant="27" id="dEV-yz-511"/>
                             <constraint firstItem="ssT-xL-azL" firstAttribute="leading" secondItem="eC7-FO-Rsg" secondAttribute="trailing" constant="93" id="fqq-Db-z4S"/>
                             <constraint firstItem="YWj-lr-d2V" firstAttribute="top" secondItem="eC7-FO-Rsg" secondAttribute="bottom" id="o51-bT-hMM"/>
                             <constraint firstItem="ssT-xL-azL" firstAttribute="trailing" secondItem="4re-y7-uLo" secondAttribute="trailingMargin" id="pAh-Na-cji"/>
@@ -162,7 +171,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9fH-6G-BRV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b8c-d1-uj4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="b8c-d1-uj4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -180,7 +189,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WVn-Ns-iNt" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FpS-4g-XwV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FpS-4g-XwV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

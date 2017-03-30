@@ -8,5 +8,8 @@ target 'FirebaseWithLove' do
   # Pods for FirebaseWithLove
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  # Pods para usar GoogleID
+  pod 'GoogleSignIn'
+  
 
 end

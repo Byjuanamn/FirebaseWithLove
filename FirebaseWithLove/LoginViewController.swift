@@ -54,6 +54,13 @@ class LoginViewController: UIViewController {
             makeLogout()
         
     }
+   
+    @IBAction func doLoginWithGoogle(_ sender: Any) {
+        makeLogout()
+        FIRAuth.auth()
+        
+        
+    }
 
     fileprivate func makeLogout() {
         if let _ = FIRAuth.auth()?.currentUser {
