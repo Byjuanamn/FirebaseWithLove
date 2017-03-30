@@ -107,14 +107,23 @@
                                     <action selector="googlBtnAction:" destination="Jwv-tK-ytj" eventType="touchUpInside" id="ORc-sP-Dbj"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fbz-Ws-eM5">
+                                <rect key="frame" x="162.5" y="94" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4yg-OP-Yne"/>
+                                    <constraint firstAttribute="width" constant="50" id="VfD-gc-M7I"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VTU-QL-k5W" firstAttribute="leading" secondItem="4re-y7-uLo" secondAttribute="leadingMargin" id="8ga-Bh-Jpv"/>
                             <constraint firstItem="ygJ-9x-Oxr" firstAttribute="centerX" secondItem="eC7-FO-Rsg" secondAttribute="centerX" id="8tT-XG-LBZ"/>
                             <constraint firstItem="YWj-lr-d2V" firstAttribute="top" secondItem="VTU-QL-k5W" secondAttribute="bottom" id="Auj-JL-skE"/>
+                            <constraint firstItem="fbz-Ws-eM5" firstAttribute="top" secondItem="rXy-qG-yi4" secondAttribute="bottom" constant="30" id="RSB-31-sn4"/>
                             <constraint firstItem="eC7-FO-Rsg" firstAttribute="leading" secondItem="VTU-QL-k5W" secondAttribute="trailing" constant="94" id="WRw-3g-8ui"/>
                             <constraint firstItem="ssT-xL-azL" firstAttribute="leading" secondItem="VTU-QL-k5W" secondAttribute="trailing" priority="999" constant="248" id="aNh-f8-Ive"/>
+                            <constraint firstItem="fbz-Ws-eM5" firstAttribute="centerX" secondItem="4re-y7-uLo" secondAttribute="centerX" id="b6p-AX-Osw"/>
                             <constraint firstItem="eC7-FO-Rsg" firstAttribute="top" secondItem="ygJ-9x-Oxr" secondAttribute="bottom" constant="27" id="dEV-yz-511"/>
                             <constraint firstItem="ssT-xL-azL" firstAttribute="leading" secondItem="eC7-FO-Rsg" secondAttribute="trailing" constant="93" id="fqq-Db-z4S"/>
                             <constraint firstItem="YWj-lr-d2V" firstAttribute="top" secondItem="eC7-FO-Rsg" secondAttribute="bottom" id="o51-bT-hMM"/>
@@ -125,6 +134,7 @@
                     <navigationItem key="navigationItem" id="GpM-kM-2YA"/>
                     <connections>
                         <outlet property="googleBtnSignIn" destination="ygJ-9x-Oxr" id="KvE-d0-gjv"/>
+                        <outlet property="photoUserProfile" destination="fbz-Ws-eM5" id="vR9-G4-rRa"/>
                         <segue destination="9fH-6G-BRV" kind="show" identifier="launchWithLogged" id="A8W-W6-Olo"/>
                     </connections>
                 </viewController>

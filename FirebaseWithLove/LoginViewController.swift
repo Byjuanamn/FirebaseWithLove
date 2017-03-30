@@ -14,6 +14,29 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
 
     var handle: FIRAuthStateDidChangeListenerHandle!
     
+    
+    var urlPhoto: URL! {
+        didSet {
+            downloadPicture(url: urlPhoto)
+        }
+    }
+    
+    func downloadPicture(url: URL) {
+        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+            if let response = data {
+                DispatchQueue.main.async {
+                    self.photoUserProfile?.image = UIImage(data: response)
+                }
+            }
+        }).resume()
+    }
+    
+    
+    
+    
+    @IBOutlet weak var photoUserProfile: UIImageView!
+    
+    
     @IBOutlet weak var googleBtnSignIn: GIDSignInButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +56,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         
         handle = FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
             print("El mail del usuario logado es \(String(describing: user?.email))")
+            self.getUserInfo(user)
         })
         
     }
@@ -154,6 +178,27 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         
         self.present(alertController, animated: true, completion: nil)
     
+    }
+    
+    
+    func getUserInfo(_ user: FIRUser!){
+        
+        if let _ = user, !user.isAnonymous {
+            
+            let uid = user.uid
+            print(uid)
+            
+            let userDisplay = user.displayName
+            self.title = userDisplay
+            
+            if let picProfile = user.photoURL as URL! {
+                
+                // sincronizar con la vista
+                self.urlPhoto = picProfile
+            
+            }
+        }
+        
     }
     
 
