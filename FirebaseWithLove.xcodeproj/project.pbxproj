@@ -10,6 +10,7 @@
 		3B08E6A6B8C9BFE178278811 /* Pods_FirebaseWithLove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4614524EC179110D544F1C34 /* Pods_FirebaseWithLove.framework */; };
 		5D5751111E8B0A3C007C24D8 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5751101E8B0A3C007C24D8 /* SecondViewController.swift */; };
 		5D5751131E8B1494007C24D8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5751121E8B1494007C24D8 /* LoginViewController.swift */; };
+		5D6C6A9B1E8DB11A0013ED27 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6C6A9A1E8DB11A0013ED27 /* PostsViewController.swift */; };
 		5DD5CC361E8AFE4C00666001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD5CC351E8AFE4C00666001 /* AppDelegate.swift */; };
 		5DD5CC381E8AFE4C00666001 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD5CC371E8AFE4C00666001 /* ViewController.swift */; };
 		5DD5CC3B1E8AFE4C00666001 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DD5CC391E8AFE4C00666001 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		4614524EC179110D544F1C34 /* Pods_FirebaseWithLove.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseWithLove.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5751101E8B0A3C007C24D8 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		5D5751121E8B1494007C24D8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5D6C6A9A1E8DB11A0013ED27 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		5DD5CC321E8AFE4C00666001 /* FirebaseWithLove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseWithLove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD5CC351E8AFE4C00666001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DD5CC371E8AFE4C00666001 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 				5DD5CC371E8AFE4C00666001 /* ViewController.swift */,
 				5D5751101E8B0A3C007C24D8 /* SecondViewController.swift */,
 				5D5751121E8B1494007C24D8 /* LoginViewController.swift */,
+				5D6C6A9A1E8DB11A0013ED27 /* PostsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				5D5751111E8B0A3C007C24D8 /* SecondViewController.swift in Sources */,
 				5DD5CC381E8AFE4C00666001 /* ViewController.swift in Sources */,
 				5DD5CC361E8AFE4C00666001 /* AppDelegate.swift in Sources */,
+				5D6C6A9B1E8DB11A0013ED27 /* PostsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

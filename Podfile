@@ -11,5 +11,8 @@ target 'FirebaseWithLove' do
   # Pods para usar GoogleID
   pod 'GoogleSignIn'
   
+  # Pod para FB RTD
+  
+  pod 'Firebase/Database'
 
 end

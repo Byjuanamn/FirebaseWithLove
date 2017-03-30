@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WVn-Ns-iNt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="odZ-w1-0jU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -141,6 +141,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQA-bA-3vf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1006" y="113"/>
+        </scene>
+        <!--Posts View Controller-->
+        <scene sceneID="Nxe-Sv-KLH">
+            <objects>
+                <viewController id="odZ-w1-0jU" customClass="PostsViewController" customModule="FirebaseWithLove" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sMv-UG-idW"/>
+                        <viewControllerLayoutGuide type="bottom" id="9pz-Jw-73o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="waT-gS-23L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clB-Vt-575">
+                                <rect key="frame" x="125" y="50" width="125" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="LUa-to-A8K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1Q-pv-O6y">
+                                <rect key="frame" x="39" y="211" width="48" height="30"/>
+                                <state key="normal" title="Madrid"/>
+                                <connections>
+                                    <action selector="madridAction:" destination="odZ-w1-0jU" eventType="touchUpInside" id="P8r-vs-6ux"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEA-ST-Erj">
+                                <rect key="frame" x="276" y="211" width="48" height="30"/>
+                                <state key="normal" title="Barca"/>
+                                <connections>
+                                    <action selector="barcaAction:" destination="odZ-w1-0jU" eventType="touchUpInside" id="4jq-4A-bXf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wEA-ST-Erj" firstAttribute="baseline" secondItem="c1Q-pv-O6y" secondAttribute="baseline" id="3Av-xp-hez"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wEA-ST-Erj" secondAttribute="trailing" constant="35" id="DmM-zI-tKc"/>
+                            <constraint firstItem="clB-Vt-575" firstAttribute="leading" secondItem="waT-gS-23L" secondAttribute="leadingMargin" constant="109" id="EWJ-iY-s1f"/>
+                            <constraint firstItem="wEA-ST-Erj" firstAttribute="width" secondItem="c1Q-pv-O6y" secondAttribute="width" id="NCL-qO-r9g"/>
+                            <constraint firstItem="clB-Vt-575" firstAttribute="top" secondItem="sMv-UG-idW" secondAttribute="bottom" constant="30" id="P5a-XP-u2Y"/>
+                            <constraint firstItem="c1Q-pv-O6y" firstAttribute="leading" secondItem="waT-gS-23L" secondAttribute="leadingMargin" constant="23" id="ai0-Me-Qxa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="clB-Vt-575" secondAttribute="trailing" constant="109" id="r4O-Bv-9qq"/>
+                            <constraint firstItem="c1Q-pv-O6y" firstAttribute="top" secondItem="clB-Vt-575" secondAttribute="bottom" constant="107" id="sPt-yi-Nyx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="winnerLbl" destination="clB-Vt-575" id="Vmj-6B-0Em"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vSd-M3-TqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2052" y="135.38230884557723"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="8FN-oD-s3P">
