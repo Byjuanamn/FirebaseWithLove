@@ -28,35 +28,62 @@ class LoginViewController: UIViewController {
         super.viewWillAppear(animated)
         
         handle = FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
-            print("El mail del usuario logado es \(user?.email)")
+            print("El mail del usuario logado es \(String(describing: user?.email))")
         })
         
     }
     
+    @IBAction func doAnonimo(_ sender: Any) {
+        makeLogout()
+        FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+            
+            if let _ = error {
+                print("Aqui error para anonimo")
+                return
+            }
+            print(user?.uid)
+            
+            
+        })
+    }
     
     @IBAction func doLogin(_ sender: Any) {
         showUserLoginDialog(withCommand: login, userAction: .toLogin)
     }
+    @IBAction func doLogout(_ sender: Any) {
+            makeLogout()
+        
+    }
 
+    fileprivate func makeLogout() {
+        if let _ = FIRAuth.auth()?.currentUser {
+            do {
+                try FIRAuth.auth()?.signOut()
+            } catch let error {
+                print(error)
+            }
+        }
+
+    }
     fileprivate func login(_ name: String, andPass pass: String) {
         FIRAuth.auth()?.signIn(withEmail: name, password: pass, completion: { (
             user, error) in
             
             if let _ = error {
-                print("tenemos un error -> \(error?.localizedDescription)")
+                print("tenemos un error -> \(String(describing: error?.localizedDescription))")
                 FIRAuth.auth()?.createUser(withEmail: name, password: pass, completion: { (user, error) in
                     if let _ = error {
-                        print("tenemos un error -> \(error?.localizedDescription)")
+                        print("tenemos un error -> \(String(describing: error?.localizedDescription))")
                         return
                     }
                     
-                    print("\(user)")
+                    print("\(String(describing: user))")
                 })
                 
                 
                 return
             }
-            print("user: \(user?.email!)")
+            print("user: \(String(describing: user?.email!))")
             
         })
         
