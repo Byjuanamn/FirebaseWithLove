@@ -14,10 +14,9 @@ import Firebase
 
 class PostsViewController: UIViewController {
 
-    @IBOutlet weak var winnerLbl: UILabel!
     
-    let ligaRef = FIRDatabase.database().reference().child("LigaWin")
-    
+    let postsRef = FIRDatabase.database().reference().child("Posts").child("articulos")
+    var model: [MyPost] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,32 +28,47 @@ class PostsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        ligaRef.observe(FIRDataEventType.value, with: { (snap) in
-        
-            print(snap)
-            self.winnerLbl.text = snap.description
+        postsRef.observe(FIRDataEventType.childAdded, with: { (snap) in
+            
+            for myPostfb in snap.children {
+                
+                let myPost = MyPost(snap: myPostfb as? FIRDataSnapshot)
+                self.model.append(myPost)
+                
+            }
+            
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+            
             
         }) { (error) in
             print(error)
         }
         
         
-//        myRef.observe(FIRDataEventType.value) { (snap) in
+    }
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func addINFB(_ sender: Any) {
         
-//            winnerLbl.text = snap.value.descrition
-//        }
+        addRecordinPosts()
+    }
+    
+    func addRecordinPosts() {
+        
+        let key = postsRef.child("articulos").childByAutoId().key
+        
+        let posts = ["title" : "Soy Leyenda", "desc" : "Mis pensamientos del este maravilloso libro"]
+        
+        let recordInFB = ["\(key)" : posts]
+        
+        postsRef.child("articulos").updateChildValues(recordInFB)
         
     }
     
 
-    @IBAction func madridAction(_ sender: Any) {
-        ligaRef.setValue("Madrid")
-    }
-
-    @IBAction func barcaAction(_ sender: Any) {
-        ligaRef.setValue("Barcelona")
-    }
-    override func didReceiveMemoryWarning() {
+       override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -71,3 +85,43 @@ class PostsViewController: UIViewController {
     */
 
 }
+
+
+
+//
+//  MyPost.swift
+//
+//
+//  Created by Juan Antonio Martin Noguera on 31/03/2017.
+//
+//
+
+class MyPost: NSObject {
+    
+    var title : String
+    var desc : String
+    var refInCloud: FIRDatabaseReference?
+    
+    init(title: String, desc: String) {
+        
+        self.title = title
+        self.desc = desc
+        self.refInCloud = nil
+        
+    }
+    
+    init(snap: FIRDataSnapshot?) {
+        refInCloud = snap?.ref
+        desc = (snap?.value as? [String:Any])?["desc"] as! String
+        title = (snap?.value as? [String:Any])?["title"] as! String
+        
+        
+    }
+    
+    convenience override init() {
+        self.init(title: "", desc: "")
+    }
+    
+    
+}
+
