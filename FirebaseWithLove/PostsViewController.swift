@@ -15,7 +15,7 @@ import Firebase
 class PostsViewController: UIViewController {
 
     
-    let postsRef = FIRDatabase.database().reference().child("Posts").child("articulos")
+    let postsRef = Database.database().reference().child("Posts").child("articulos")
     var model: [MyPost] = []
     
     override func viewDidLoad() {
@@ -28,11 +28,11 @@ class PostsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        postsRef.observe(FIRDataEventType.childAdded, with: { (snap) in
+        postsRef.observe(DataEventType.childAdded, with: { (snap) in
             
             for myPostfb in snap.children {
                 
-                let myPost = MyPost(snap: myPostfb as? FIRDataSnapshot)
+                let myPost = MyPost(snap: myPostfb as? DataSnapshot)
                 self.model.append(myPost)
                 
             }
@@ -100,7 +100,7 @@ class MyPost: NSObject {
     
     var title : String
     var desc : String
-    var refInCloud: FIRDatabaseReference?
+    var refInCloud: DatabaseReference?
     
     init(title: String, desc: String) {
         
@@ -110,10 +110,10 @@ class MyPost: NSObject {
         
     }
     
-    init(snap: FIRDataSnapshot?) {
+    init(snap: DataSnapshot?) {
         refInCloud = snap?.ref
-        desc = (snap?.value as? [String:Any])?["desc"] as! String
-        title = (snap?.value as? [String:Any])?["title"] as! String
+        desc = "" //(snap?.value as? [String:Any])?["desc"] as! String
+        title = "" //(snap?.value as? [String:Any])?["title"] as! String
         
         
     }

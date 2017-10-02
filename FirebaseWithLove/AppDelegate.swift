@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var window: UIWindow?
 
     override init() {
-        FIRApp.configure()
+        FirebaseApp.configure()
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -49,9 +49,9 @@ extension AppDelegate {
             return
         }
         
-        let creditials = FIRGoogleAuthProvider.credential(withIDToken: authForFireBase.idToken, accessToken: authForFireBase.accessToken)
+        let creditials = GoogleAuthProvider.credential(withIDToken: authForFireBase.idToken, accessToken: authForFireBase.accessToken)
         
-        FIRAuth.auth()?.signIn(with: creditials, completion: { (user, error) in
+        Auth.auth().signIn(with: creditials, completion: { (user, error) in
             if let _ = error {
                 print("Error")
                 return

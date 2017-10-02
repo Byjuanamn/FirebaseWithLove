@@ -16,7 +16,7 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        FIRAnalytics.setScreenName("SecondViewController",
+        Analytics.setScreenName("SecondViewController",
                                    screenClass: "Second")
         
     }
@@ -34,7 +34,7 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func evento3Action(_ sender: Any) {
-        FIRAnalytics.logEvent(withName: "Action3",
+        Analytics.logEvent("Action3",
                               parameters: ["producto_desc" : "Manzanas" as NSObject])
     }
 

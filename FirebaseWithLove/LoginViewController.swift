@@ -12,7 +12,7 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate {
 
-    var handle: FIRAuthStateDidChangeListenerHandle!
+    var handle: AuthStateDidChangeListenerHandle!
     
     
     var urlPhoto: URL! {
@@ -54,7 +54,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        handle = FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
+        handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             print("El mail del usuario logado es \(String(describing: user?.email))")
             self.getUserInfo(user)
         })
@@ -63,7 +63,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBAction func doAnonimo(_ sender: Any) {
         makeLogout()
-        FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+        Auth.auth().signInAnonymously(completion: { (user, error) in
             
             if let _ = error {
                 print("Aqui error para anonimo")
@@ -93,9 +93,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
    
    
     fileprivate func makeLogout() {
-        if let _ = FIRAuth.auth()?.currentUser {
+        if let _ = Auth.auth().currentUser {
             do {
-                try FIRAuth.auth()?.signOut()
+                try Auth.auth().signOut()
                 GIDSignIn.sharedInstance().signOut()
             } catch let error {
                 print(error)
@@ -104,12 +104,12 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
 
     }
     fileprivate func login(_ name: String, andPass pass: String) {
-        FIRAuth.auth()?.signIn(withEmail: name, password: pass, completion: { (
+        Auth.auth().signIn(withEmail: name, password: pass, completion: { (
             user, error) in
             
             if let _ = error {
                 print("tenemos un error -> \(String(describing: error?.localizedDescription))")
-                FIRAuth.auth()?.createUser(withEmail: name, password: pass, completion: { (user, error) in
+                Auth.auth().createUser(withEmail: name, password: pass, completion: { (user, error) in
                     if let _ = error {
                         print("tenemos un error -> \(String(describing: error?.localizedDescription))")
                         return
@@ -181,7 +181,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     
-    func getUserInfo(_ user: FIRUser!){
+    func getUserInfo(_ user: User!){
         
         if let _ = user, !user.isAnonymous {
             
